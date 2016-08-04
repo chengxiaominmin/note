@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular</title>
+</head>
+<body>
+$scope的生命周期
+创建-链接-更新-销毁($destory)-指令和作用域
+<h3>指令</h3>
+<ul>
+    <li>
+        <p>ng-model: 控制元素的值</p>
+    </li>
+    <li>
+        <p>ng-click: 控制点击的方法</p>
+        <div>
+            <p>所有的点击事件必须在ng-controller里面才能其作用</p>
+            <div ng-controller="myCtrl">
+                {{ count }}
+                <button ng-click="add(number)">add</button>
+            </div>
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope){
+                var $scope.add = function(number){
+                    $scope.count += number;
+                }
+            })
+        </div>
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
